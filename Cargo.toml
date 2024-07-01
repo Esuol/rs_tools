@@ -1,6 +1,32 @@
 [package]
+repository = "https://github.com/berlinen/rs_tools.git"
 name = "rs_tools"
 version = "0.1.0"
 edition = "2021"
+readme = "README.md"
+
+description = "A collection of tools for Rust"
+keywords = ["tools", "rust", "utils"]
+categories = [
+  "development-tools",
+  "algorithms",
+  "ryst-parrrerns",
+  "no-std",
+  "no-std::no-alloc",
+]
+
+[lib]
+bench = false
+test = false
 
 [dependencies]
+either = { version = "1.0", default-features = false }
+
+[dev-dependencies]
+
+[features]
+
+[profile]
+bench = { debug = true }
+
+[[bench]]
