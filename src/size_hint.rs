@@ -41,3 +41,12 @@ pub fn mul(a: SizeHint, b: SizeHint) -> SizeHint {
     };
     (low, hi)
 }
+
+/// Multiply `x` correctly with a `SizeHint`.
+#[inline]
+pub fn mul_scalar(sh: SizeHint, x: usize) -> SizeHint {
+    let (mut low, mut hi) = sh;
+    low = low.saturating_mul(x);
+    hi = hi.and_then(|elt| elt.checked_mul(x));
+    (low, hi)
+}
